@@ -36,6 +36,6 @@ contract Caller{
         addr1 = SampleContract(_sampleAddr).callerAddr(); // address of this Caller Contract
         (bool success, bytes memory data) = _sampleAddr.delegatecall(abi.encodeWithSignature("callerAddr()"));
         require(success == true);
-        addr2 = abi.decode(data, (address)); // address of the User who is calling the function
+        addr2 = abi.decode(data, (address)); // address of the User who is calling the function. And since it is called by delegatecall => msg.sender == tx.origin
     }
 }
