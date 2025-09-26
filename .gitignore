@@ -1,3 +1,4 @@
 .states/
 artifacts/
 .deps/
+src/scenario.json
